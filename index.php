@@ -1,9 +1,8 @@
 <?php
 session_start();
-//Nhúng thư viện Model và Database
 require_once 'config/db.php';
 require_once 'model/master.php';
-//Gọi URL dưới tên demo.com/?controller=yourController&action=yourAction
+
 If(isset($_GET['controller'], $_GET['action'])){
     $controller = $_GET['controller'];
     $action = $_GET['action'];
@@ -13,9 +12,11 @@ If(isset($_GET['controller'], $_GET['action'])){
 }
 
 if($controller == "Admin"){
+    // admin layout
     require_once "view/admin/layout.php";
 }
 else{
+    // user layout
     require_once "view/layout.php";
 }
 ?>
